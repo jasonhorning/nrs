@@ -1,0 +1,43 @@
+{
+     "success": true
+
+    ,"options":{
+       "isSystemRegistry":  true
+    }
+
+    ,"details":{
+            "Token": "_references"
+
+           ,"Title": "References"
+
+           ,"Created": "07/16/2012"
+
+           ,"Last Updated": "07/16/2012"
+
+           ,"Parent Registry": "_NRS System_"
+
+           ,"Reference": "Other"
+
+           ,"Management Policy": "Other"
+
+           ,"Description": "This registry defines URL references for assignment to the Reference field of other registries."
+
+           ,"Notes": "This is a NRS system registry and is not accessible by the public."
+    }
+
+    ,"fields": [
+        {"Name": "Id",          "Type": "string"}
+       ,{"Name": "URL",         "Type": "url"}
+       ,{"Name": "Description", "Type": "string"}
+    ]
+
+    ,"entries": [
+         {"Id": "(None)", "Description": "No reference document.", "URL": ""}
+        ,{"Id": "NENA 08-003 v1", "Description": "Detailed Functional and Interface Standards for the NENA i3 Solution", "URL": "http://www.nena.org/?page=i3_Stage3"}
+        ,{"Id": "NENA 70-001", "Description": "NENA Registry System", "URL": "http://www.nena.org/?page=nena_registry_system"}
+        ,{"Id": "NENA 71-001 v1", "Description": "NG9-1-1 Additional Data ", "URL": "http://www.nena.org/?page=NG911_AdditionalData"}
+        ,{"Id": "NENA 71-002 draft", "Description": "Civic Location Data Exchange Format (CLDXF)", "URL": "https://nena.webexone.com/r.asp?a=5&id=118741"}
+        ,{"Id": "IETF RFC5031", "Description": "A Uniform Resource Name (URN) for Emergency and Other Well-Known Services", "URL": "http://www.ietf.org/rfc/rfc5031.txt"}
+        ,{"Id": "IETF RFC6061", "Description": "Uniform Resource Name (URN) Namespace for the National Emergency Number Association (NENA)", "URL": "http://www.ietf.org/rfc/rfc6061.txt"}
+    ]
+}

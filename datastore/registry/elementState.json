@@ -1,0 +1,42 @@
+{
+     "success": true
+
+    ,"details":{
+            "Token": "elementState"
+
+           ,"Title": "Element State"
+
+           ,"Created": "06/14/2011"
+
+           ,"Last Updated": "07/16/2012"
+
+           ,"Parent Registry": "NRS"
+
+           ,"Reference": "NENA 08-003 v1"
+
+           ,"Management Policy": "NENA Technical Standard Required"
+
+           ,"Description": "The elementState event returns an enumerated value of the current state of an agency or element. A registry is needed to enumerate the possible values returned."
+
+           ,"Notes": "A new entry to elementState requires an explanation of when value will be returned and how it is differentiated from other values in the registry."
+    }
+
+    ,"fields": [
+        {"Name": "Value",       "Type": "token"}
+       ,{"Name": "Description", "Type": "string"}
+       ,{"Name": "Reference",   "Type": "reference"}
+       ,{"Name": "Date",        "Type": "date"}
+    ]
+
+    ,"entries": [
+        {"Value": "Normal", "Description": "The element is operating normally, accepting calls and events.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "Unmanned", "Description": "Applies to PSAPs only. The PSAP has indicated that it is not currently answering calls.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "ScheduledMaintenance", "Description": "The element is undergoing maintenance activities and is not processing calls.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "ServiceDisruption", "Description": "The element has significant problems and is unable to answer calls.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "MajorIncidentInProgress", "Description": "The element is operating normally, but is handling a major incident and may be unable to accept some kinds of calls.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "Overloaded", "Description": "The element is completely overloaded", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "GoingDown", "Description": "The element is being taken out of service.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "Down", "Description": "The element is unavailable.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+       ,{"Value": "ComingUp", "Description": "The element is being put back in service.", "Reference": "NENA 08-003 v1", "Date": "06/14/2011"}
+    ]
+}

@@ -1,0 +1,44 @@
+{
+     "success": true
+
+    ,"options":{
+       "isSystemRegistry":  true
+    }
+
+    ,"details":{
+        "Token": "_policies"
+
+       ,"Title": "NRS Management Policies"
+
+       ,"Created": "07/16/2012"
+
+       ,"Last Updated": "07/16/2012"
+
+       ,"Parent Registry": null
+
+       ,"Reference": "NENA 70-001"
+
+       ,"Management Policy": "NENA Technical Standard Required"
+
+       ,"Description": "A listing of all NENA Registry System registry management policies."
+
+       ,"Notes": ""
+    }
+
+    ,"fields": [
+        {"Name": "Value",       "Type": "string"}
+       ,{"Name": "Reference",   "Type": "reference"}
+    ]
+
+    ,"entries": [
+         {"Value": "NENA Technical Standard Required",  "Reference": "NENA 70-001"}
+        ,{"Value": "NENA Document Required",  "Reference": "NENA 70-001"}
+        ,{"Value": "Expert Review (or Designated Expert)",  "Reference": "NENA 70-001"}
+        ,{"Value": "Private Use",  "Reference": "NENA 70-001"}
+        ,{"Value": "Experimental Use",  "Reference": "NENA 70-001"}
+        ,{"Value": "Hierarchical Allocation",  "Reference": "NENA 70-001"}
+        ,{"Value": "First Come First Served",  "Reference": "NENA 70-001"}
+        ,{"Value": "Specification Required",  "Reference": "NENA 70-001"}
+        ,{"Value": "Other", "Reference": "NENA 70-001"}
+    ]
+}

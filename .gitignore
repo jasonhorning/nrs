@@ -1,0 +1,14 @@
+.bundle
+bin
+vendor
+*.iml
+*.ipr
+*.iws
+reports
+target
+*.log
+*.log.*
+tmp
+.DS_Store
+*.sublime-workspace
+scratch
