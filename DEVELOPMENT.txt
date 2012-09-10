@@ -1,0 +1,39 @@
+NRS Development Environment
+
+This version of nrs has been developed in these environments:
+
+Linux / CentOS 6.3 / Software Development profile
+  Google Chrome
+    [root@ghost ~]# vi /etc/yum.repos.d/google-chrome.repo
+      [google-chrome]
+      name=google-chrome
+      baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+      enabled=1
+      gpgcheck=1
+    [root@ghost ~]# yum install google-chrome-stable
+
+  git 1.7 - installed by default in CentoOS 6.3
+
+  Oracle Java JDK 7u4
+    http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u4-downloads-1591156.html
+    root# rpm -Uvh ~bdupras/Downloads/jdk-7u4-linux-x64.rpm 
+    [root@ghost ~]# alternatives --install /usr/bin/java java /usr/java/latest/jre/bin/java 20000
+    [root@ghost ~]# alternatives --install /usr/bin/javaws javaws /usr/java/latest/jre/bin/javaws 20000
+    [root@ghost ~]# alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 20000
+    [root@ghost ~]# alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 20000
+
+  Apache Maven 3.0.4
+    download apache-maven-3.0.4-bin.tar.gz from http://maven.apache.org/download.html
+    [root@ghost ~]# cd /usr/lib && tar zxvf /path/to/apache-maven-3.0.4-bin.tar.gz
+    [root@ghost ~]# alternatives --install /usr/bin/mvn mvn /usr/lib/apache-maven-3.0.4/bin/mvn 1500
+
+  IntelliJ
+    [root@ghost ~]# cd /usr/lib && tar zxvf /path/to//ideaIC-11.1.3.tar.gz    
+
+
+  Other stuff
+    [root@ghost ~]# alternatives --install /usr/bin/open open /usr/bin/xdg-open 15000
+
+
+Mac OSX Lion
+
