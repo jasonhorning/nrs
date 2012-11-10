@@ -33,7 +33,7 @@ Linux / CentOS 6.3 / Software Development profile
 
   Other stuff
     [root@ghost ~]# alternatives --install /usr/bin/open open /usr/bin/xdg-open 15000
-
+    export MAVEN_OPTS="-Xmx1024m -Xms1024m -XX:MaxPermSize=512m -XX:ReservedCodeCacheSize=128m -agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n"
 
 Mac OSX Lion
 

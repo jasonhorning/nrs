@@ -1,23 +1,17 @@
 {
-     "success": true
+    "options": {
+      "isSystemRegistry": true
+    }
 
     ,"details":{
             "Token": ""
-
            ,"Title": ""
-
            ,"Created": ""
-
            ,"Last Updated": ""
-
            ,"Parent Registry": "NRS"
-
-           ,"Reference": null
-
+           ,"Reference": ""
            ,"Management Policy": "NENA Technical Standard Required"
-
            ,"Description": ""
-
            ,"Notes": ""
     }
 
@@ -29,6 +23,6 @@
     ]
 
     ,"entries": [
-        {"Value": "Value1", "Description": "Describe the meaning of Value 1 here.", "References": "[NENA 08-003 v1]", "Date": "06/02/1974"}
+        {"Value": "Value1", "Description": "Describe the meaning of Value 1 here.", "Reference": "[NENA 08-003 v1]", "Date": "06/02/1974"}
     ]
 }

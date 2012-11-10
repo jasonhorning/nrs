@@ -76,11 +76,31 @@ EditableGrid.prototype.setRegistryTypeCellRenderer = function (registryFieldName
             span.appendChild(a);
             return span;
         }
-        if ("" != value) cell.appendChild(link(value));
+        function nolink(token) {
+            var span = document.createElement("span");
+            span.innerHTML = token + " (save&nbsp;to&nbsp;edit)";
+            return span;
+        }
+        if ("" != value) {
+            if (grid.originalDataContains(registryFieldName, value)) {
+                cell.appendChild(link(value));
+            } else {
+                cell.appendChild(nolink(value));
+            }
+        }
     }});
+    registryEditRenderer.registryFieldName = registryFieldName;
+    registryEditRenderer.grid = grid;
 
     this.setCellRenderer(registryFieldName, registryEditRenderer);
 };
+
+EditableGrid.prototype.originalDataContains = function (field, value) {
+    for (i=0; i<this.originalData.length; i++) {
+        if (value == this.originalData[i][field]) return true;
+    }
+    return false;
+}
 
 EditableGrid.prototype.setReferenceTypeCellRenderer = function (registryFieldName) {
     var c = this.ctxPath;
@@ -245,6 +265,8 @@ EditableGrid.prototype.getColumns = function() {
 };
 
 EditableGrid.prototype.setData = function(data) {
+    this.originalData = data;
+
     var gridData = [];
     for (var i=0; i<data.length; i++) {
         gridData[i] = {id: i+1, values: data[i]};

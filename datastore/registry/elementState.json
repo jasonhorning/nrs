@@ -1,23 +1,17 @@
 {
-     "success": true
+    "options": {
+      "isSystemRegistry": true
+    }
 
     ,"details":{
             "Token": "elementState"
-
            ,"Title": "Element State"
-
            ,"Created": "06/14/2011"
-
            ,"Last Updated": "07/16/2012"
-
            ,"Parent Registry": "NRS"
-
            ,"Reference": "NENA 08-003 v1"
-
            ,"Management Policy": "NENA Technical Standard Required"
-
            ,"Description": "The elementState event returns an enumerated value of the current state of an agency or element. A registry is needed to enumerate the possible values returned."
-
            ,"Notes": "A new entry to elementState requires an explanation of when value will be returned and how it is differentiated from other values in the registry."
     }
 

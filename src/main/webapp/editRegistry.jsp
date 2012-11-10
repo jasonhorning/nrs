@@ -48,7 +48,13 @@
 <body>
 
 <div id="registryDetailsHeaderPanel">
-    <h1><span id="titleRegistryTitle"></span></h1>
+        <span id="titleNRSHome"><a href="<%=ctxPath%>">NRS</a></span>
+        /
+        <span id="titleAdminHome"><a href="<%=ctxPath%>/admin">Admin</a></span>
+        /
+        <span id="titleRegistries"><a href="<%=ctxPath%>/admin/_registries">Registries</a></span>
+        /
+        <span id="titleRegistryTitle"></span>
 </div>
 
 <%--<form>--%>
@@ -88,6 +94,13 @@
             <tr>
                 <td style="vertical-align: top;">Entries</td>
                 <td><div id="registryEntriesGridDiv"></div></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"></td>
+                <td><div id="save-revert-buttons">
+                    <input type="button" value="Save Changes" onclick="javascript:saveRegistry(); return false;">
+                    <input type="button" value="Revert Changes" onclick="javascript:initRegistry(); return false;">
+                </div></td>
             </tr>
         </table>
     </div>
@@ -153,10 +166,14 @@
 
 
     window.onload = function() {
+        document.title = "Edit Registry [" + registryToken + "]";
         initParentRegistrySelector();
         initManagementPolicySelector();
-        document.title = "Edit Registry [" + registryToken + "]";
+        initRegistry();
+        initHotKeys();
+    };
 
+    function initRegistry() {
         loadRegistry(registryToken
                 ,function onSuccess(loaded_registry){
                     registry = loaded_registry;
@@ -168,14 +185,13 @@
                     loadRegistry("_newRegistry"
                         ,function onSuccess(loaded_registry){
                             registry = loaded_registry;
+                            initScreenWithRegistry(registry);
                             console.log(["loaded registry", registry]);
                         }
                     );
                 }
         );
-
-        initHotKeys();
-    };
+    }
 
     function initScreenWithRegistry (registry) {
         titleRegistryTitle.innerHTML = registry.details["Title"];
@@ -254,13 +270,13 @@
         loadRegistryValuesArray(ctxPath + '/data/registry/_registries.json', "Id",
                 function onSuccess(registry_ids) {
                     var options = ["(None)"].concat(registry_ids);
-                    var values = [null].concat(registry_ids);
+                    var values = [""].concat(registry_ids);
                     initSelector(registryParentRegistry, options, values);
                 }
                 , function onFailure(err) {
                     console.log(["loadRegistryIdArray failed", err]);
                     var options = ["(None)", "(Error loading registry list)"];
-                    var values = [null, null];
+                    var values = ["", ""];
                     initSelector(registryParentRegistry, options, values);
                 }
         );
@@ -270,13 +286,13 @@
         loadRegistryValuesArray(ctxPath + '/data/registry/_policies.json', "Value",
                 function onSuccess(policies) {
                     var options = ["(None)"].concat(policies);
-                    var values = [null].concat(policies);
+                    var values = [""].concat(policies);
                     initSelector(registryManagementPolicy, options, values);
                 }
                 , function onFailure(err) {
                     console.log(["loadRegistryIdArray failed", err]);
                     var options = ["(None)", "(Error loading policy list)"];
-                    var values = [null, null];
+                    var values = ["", ""];
                     initSelector(registryManagementPolicy, options, values);
                 }
         );
