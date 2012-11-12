@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="service" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>urn:nena:service:responder</title>
+	<created>2011-06-14</created>
+	<updated>2011-06-14</updated>
+    <registry ref="../../service">urn:nena:service</registry>
+    <references>
+        <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+    </references>
+	<registration_rule>NENA Document Required</registration_rule>
+	<description>Once a PSAP gets a call, they may have to transfer the call to a secondary PSAP.  The secondary PSAP is chosen based on the type of responder, and the location of the caller.   Routing of emergency calls from a PSAP towards a responder, including instant messages and non human initiated calls, is accomplished with a urn beginning with urn:nena:service:responder.</description>
+    <note>A new entry to urn:nena:service:responder requires an explanation of the type of responder, and how it is distinguished from other responder types already in the registry. </note>
+	<records>
+		<record>
+			<value>police</value>
+			<description>Route calls to Police Agency</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+		<record>
+			<value>fire</value>
+			<description>Route calls to a Fire Department</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+            <value>ems</value>
+            <description>Route calls to a Emergency Medical Service</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>poison_control</value>
+            <description>Route calls to a Poison Control Center</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>mountain_rescue</value>
+            <description>Route calls to a Mountain Rescue Service</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>fbi</value>
+            <description>Route calls to the appropriate FBI field office</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>sheriff</value>
+            <description>Route calls to a Sheriff‘s office, when both a police and Sheriff dispatch may be possible</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>state_police</value>
+            <description>Route calls to a state police office</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+        <record>
+            <value>coast_guard</value>
+            <description>Route calls to a Coast Guard station</description>
+              <references>
+                  <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+              </references>
+              <date>2011-06-14</date>
+        </record>
+	</records>
+</registry>

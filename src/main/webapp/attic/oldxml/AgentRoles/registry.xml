@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="elementState" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>AgencyRoles</title>
+	<created>2011-06-14</created>
+	<updated>2011-06-14</updated>
+    <registry ref="../../nrs">NRS</registry>
+    <references>
+        <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+    </references>
+	<registration_rule>NENA Document Required</registration_rule>
+	<description>Agents authenticate to the ESInet in one or more roles.  The roles are defined in an OID to be referenced in a future edition of this document.</description>
+	<note>A new entry to AgentRoles requires a definition of the role, and must be suitably explicit to differentiate the role from existing roles.  A NENA Document is required to add a new entry into the registry.  Normally, this will be a revision to a specific OID (to be created) that defines all NG9-1-1 agent roles.</note>
+	<records>
+		<record>
+			<value>PSAP Manager</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Assist Manager</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Shift Supervisor</value>
+			<description>(includes dispatch, call taking or combination of both)</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Dispatcher</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Call taker</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>GIS Specialist</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>GIS Supervisor</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Maintenance Supervisor</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Maintenance Technician</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Temporary Technician</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ESInetwork Operator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ESInetwork Operations Supervisor</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>9-1-1 Authority Director</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>9-1-1 Authority Agent</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Database Administrator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>IT Systems Analyst</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+    </records>
+</registry>

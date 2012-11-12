@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="elementState" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>ManagementPolicy</title>
+	<created>2009-09-17</created>
+	<updated>2009-09-17</updated>
+    <registry ref="../../nrs">NRS</registry>
+    <references>
+        <xref type="nena" data="nena_registry_system">70-001</xref>
+    </references>
+	<registration_rule>Nena Technical Standard Required</registration_rule>
+	<description>A listing of all NENA Registry System registry management policies.</description>
+	<records>
+		<record>
+			<value>NENA Technical Standard Required</value>
+			<description>A NENA Technical Standard is required to add a new entry into the registry.</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>NENA Document Required</value>
+			<description>Any NENA document publication.</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>Expert Review (or Designated Expert)</value>
+			<description>Approval by a Designated Expert is required.  The required documentation and review criteria for use by the Designated Expert should be provided when defining the registry.   </description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>Private Use</value>
+			<description>For private or local use only, with the type and purpose defined by the local site.  No attempt is made to prevent multiple sites from using the same value in different (and incompatible) ways.  There is no need for NRS to review such assignments (since NRS does not record them) and assignments are not generally useful for broad interoperability.  It is the responsibility of the entities making use of the Private Use range to ensure that no conflicts occur (within the intended scope of use).</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>Experimental Use</value>
+			<description>Similar to private or local use only, with the purpose being to facilitate experimentation.</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>Hierarchical Allocation</value>
+			<description>Delegated managers can assign values to sub registries provided they have been given control over that part of the registry.  NRS controls the higher levels of the registry according to one of the other policies. </description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>First Come First Served</value>
+			<description>Assignments are made to anyone on a first come, first served basis.  There is no substantive review of the request, other than to ensure that it is well-formed and doesn't duplicate an existing assignment.  However, requests must include a minimal amount of clerical information, such as a point of contact (including an email address) and a brief description of how the value will be used.  Additional information specific to the type of value requested may also need to be provided, as defined by the registry.  For numbers, the exact value is generally assigned by NRS; with names, specific text strings can usually be requested.</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+		<record>
+			<value>Specification Required</value>
+			<description>Values and their meanings must be documented in a permanent and readily available public specification, in sufficient detail so that interoperability between independent implementations is possible.  When used, Specification Required also implies use of a Designated Expert, who will review the public specification and evaluate whether it is sufficiently clear to allow interoperable implementations.  The intention behind "permanent and readily available" is that a document can reasonably be expected to be findable and retrievable long after NRS assignment of the requested value.  Publication of a NENA Standard is an ideal means of achieving this requirement, but Specification Required is intended to also cover the case of a document published outside NENA.</description>
+            <references>
+                <xref type="nena" data="nena_registry_system">70-001</xref>
+            </references>
+            <date>2009-09-17</date>
+		</record>
+        <record>
+            <value>Other</value>
+            <description></description>
+            <date>2009-09-17</date>
+        </record>
+    </records>
+</registry>

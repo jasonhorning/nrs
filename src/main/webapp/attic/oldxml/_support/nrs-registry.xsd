@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Brian Dupras (Duprasville) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:nena:xml:namespace:nrs" targetNamespace="urn:nena:xml:namespace:nrs" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="registry" type="tns:registryType"/>
+	<xs:complexType name="peopleType">
+		<xs:sequence>
+			<xs:element name="person" type="tns:personType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="recordsType">
+		<xs:sequence>
+			<xs:any minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="personType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="uri" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="updated" type="xs:date"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:token" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="referencesType">
+		<xs:sequence>
+			<xs:element name="xref" type="tns:xrefType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="xrefType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:token" use="optional"/>
+				<xs:attribute name="path" type="xs:token" use="optional"/>
+				<xs:attribute name="data" type="xs:token" use="optional"/>
+				<xs:attribute name="url" type="xs:token" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="xrefsType">
+		<xs:sequence>
+			<xs:element name="xref" type="tns:xrefType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="registryRefType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="ref" type="xs:token" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="registryType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="created" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="updated" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="registry" type="tns:registryRefType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="references" type="tns:referencesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="registration_rule" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="records" type="tns:recordsType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="people" type="tns:peopleType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:token"/>
+		<xs:attribute name="registrar" type="xs:token"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="elementState" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>AgencyRoles</title>
+	<created>2011-06-14</created>
+	<updated>2011-06-14</updated>
+    <registry ref="../../nrs">NRS</registry>
+    <references>
+        <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+    </references>
+	<registration_rule>NENA Technical Standard Required</registration_rule>
+	<description>Agencies are classified by a role in the ESInet.
+	The initial roles are found in NENA 08-003, Section 6.3.  The role entry in the registry should be in “camelCase”,
+	thus “ESInet Operator” as listed in Section 6.3 should be “ESInetOperator” in the registry.  The
+	reference is this document.
+	</description>
+	<note>A new entry to AgencyRole requires a definition of the role, and must be suitably explicit to differentiate the role from existing roles.</note>
+	<records>
+		<record>
+			<value>PSAP</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Local 9-1-1 Authority</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>State 9-1-1 Authority</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ESInet operator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ESRP operator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ECRF/LVF operator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>LIS operator</value>
+			<description></description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+    </records>
+</registry>

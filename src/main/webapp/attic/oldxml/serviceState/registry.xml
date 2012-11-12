@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="elementState" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>serviceState</title>
+	<created>2011-06-14</created>
+	<updated>2011-06-14</updated>
+    <registry ref="../../nrs">NRS</registry>
+    <references>
+        <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+    </references>
+	<registration_rule>NENA Technical Standard Required</registration_rule>
+	<description>ServiceState is an event that indicates the state of service either automatically determined, or as determined by management.</description>
+	<note>A new entry to serviceState requires an explanation of when value will be returned and how it is differentiated from other values in the registry.</note>
+	<records>
+		<record>
+			<value>Normal</value>
+			<description>The service is operating normally.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ScheduledMaintenance (down)</value>
+			<description>The service is undergoing maintenance activities and is not accepting service requests.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ScheduledMaintenance (available)</value>
+			<description>The service is undergoing maintenance activities, but will respond to service requests, possibly with reduced reliability.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ServiceDisruption</value>
+			<description>The service has significant problems and is unable to respond.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Slow</value>
+			<description>The service has significant problems and is unable to respond.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>GoingDown</value>
+			<description>The service is being taken out of service.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Down</value>
+			<description>The service is unavailable.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+	</records>
+</registry>

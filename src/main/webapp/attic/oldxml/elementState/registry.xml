@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./registry.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" id="elementState" registrar="nena" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs registry.xsd">
+	<title>elementState</title>
+	<created>2011-06-14</created>
+	<updated>2011-06-14</updated>
+    <registry ref="../../nrs">NRS</registry>
+    <references>
+        <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+    </references>
+	<registration_rule>NENA Technical Standard Required</registration_rule>
+	<description>The elementState event returns an enumerated value of the current state of an agency or element.  A registry is needed to enumerate the possible values returned.</description>
+	<note>A new entry to elementState requires an explanation of when value will be returned and how it is differentiated from other values in the registry.</note>
+	<records>
+		<record>
+			<value>Normal</value>
+			<description>The element is operating normally, accepting calls and events.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Unmanned</value>
+			<description>Applies to PSAPs only. The PSAP has indicated that it is not currently answering calls.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ScheduledMaintenance</value>
+			<description>The element is undergoing maintenance activities and is not processing calls.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ServiceDisruption</value>
+			<description>The element has significant problems and is unable to answer calls.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>MajorIncidentInProgress</value>
+			<description>The element is operating normally, but is handling a major incident and may be unable to accept some kinds of calls.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Overloaded</value>
+			<description>The element is completely overloaded</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>GoingDown</value>
+			<description>The element is being taken out of service.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>Down</value>
+			<description>The element is unavailable.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+        <record>
+			<value>ComingUp</value>
+			<description>The element is being put back in service.</description>
+            <references>
+                <xref type="nena" data="i3_Stage3">08-003 v1</xref>
+            </references>
+            <date>2011-06-14</date>
+		</record>
+	</records>
+</registry>
