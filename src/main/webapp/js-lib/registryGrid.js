@@ -291,8 +291,8 @@ xhrGet = function(url, onLoaded, onFailure) {
     return _xhrReq("GET", url, "", onLoaded, onFailure);
 };
 
-xhrPost = function(url, body, onLoaded, onFailure) {
-    return _xhrReq("POST", url, body, onLoaded, onFailure);
+xhrPut = function(url, body, onLoaded, onFailure) {
+    return _xhrReq("PUT", url, body, onLoaded, onFailure);
 };
 
 _xhrReq = function(method, url, body, onLoaded, onFailure) {
@@ -340,4 +340,10 @@ EditableGrid.prototype._loadReferences = function (url, onLoaded, onError) {
 
         ,onError
     );
+};
+
+EditableGrid.prototype.resolveReference = function (token) {
+    if (this._reference_urls) return this._reference_urls[token];
+
+    return null;
 };

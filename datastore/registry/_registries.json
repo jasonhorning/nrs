@@ -8,7 +8,7 @@
     "Created": "07/16/2012",
     "Last Updated": "07/16/2012",
     "Parent Registry": "",
-    "Management Policy": "NENA Technical Standard Required",
+    "Management Policy": "NENA Document Required",
     "Description": "When developing and deploying technical standards which employ enumerations, or lists of values, where the enumeration or lists can reasonably be expected to change over time as new technology, vendors, service providers or other stakeholders evolve, a known stable way to maintain the current acceptable values in the enumeration or list is required. The values in the enumeration or list are called a registry.",
     "Notes": "Creating a registry involves describing the registry to be created, an initial set of assignments (if appropriate), and guidelines on how future assignments are to be made. Registries to be managed by NRS must be created in a full NENA Technical Standard."
   },
@@ -53,6 +53,12 @@
       "Publish": true,
       "Id": "elementState",
       "Description": "An enumerated value of the current state of an agency or element",
+      "Reference": "NENA 08-003 v1"
+    },
+    {
+      "Publish": false,
+      "Id": "bd2",
+      "Description": "asdasd",
       "Reference": "NENA 08-003 v1"
     }
   ]

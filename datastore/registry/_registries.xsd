@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:nena:xml:namespace:nrs._registries" targetNamespace="urn:nena:xml:namespace:nrs._registries" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>When developing and deploying technical standards which employ enumerations, or lists of values, where the enumeration or lists can reasonably be expected to change over time as new technology, vendors, service providers or other stakeholders evolve, a known stable way to maintain the current acceptable values in the enumeration or list is required. The values in the enumeration or list are called a registry.</xs:documentation>
+    </xs:annotation>
+    <xs:element name="entry" type="tns:entryType" />
+    <xs:complexType name="entryType">
+        <xs:sequence>
+            <xs:element name="Publish" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Id" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Reference" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="elementState.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs _nrs.xsd urn:nena:xml:namespace:nrs.elementState elementState.xsd">
+    <options />
+    <details>
+        <token>elementState</token>
+        <title>Element State</title>
+        <created>2011-06-14</created>
+        <last-updated>2012-07-16</last-updated>
+        <parent-registry></parent-registry>
+        <management-policy>NENA Technical Standard Required</management-policy>
+        <description>The elementState event returns an enumerated value of the current state of an agency or element. A registry is needed to enumerate the possible values returned.</description>
+        <notes>A new entry to elementState requires an explanation of when value will be returned and how it is differentiated from other values in the registry.</notes>
+    </details>
+    <entries>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>Normal</Value>
+            <Description>The element is operating normally, accepting calls and events.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>Unmanned</Value>
+            <Description>Applies to PSAPs only. The PSAP has indicated that it is not currently answering calls.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>ScheduledMaintenance</Value>
+            <Description>The element is undergoing maintenance activities and is not processing calls.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>ServiceDisruption</Value>
+            <Description>The element has significant problems and is unable to answer calls.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>MajorIncidentInProgress</Value>
+            <Description>The element is operating normally, but is handling a major incident and may be unable to accept some kinds of calls.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>Overloaded</Value>
+            <Description>The element is completely overloaded</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>GoingDown</Value>
+            <Description>The element is being taken out of service.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>Down</Value>
+            <Description>The element is unavailable.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs.elementState">
+            <Value>ComingUp</Value>
+            <Description>The element is being put back in service.</Description>
+            <Reference>NENA 08-003 v1</Reference>
+            <Date>06/14/2011</Date>
+        </entry>
+    </entries>
+</registry>

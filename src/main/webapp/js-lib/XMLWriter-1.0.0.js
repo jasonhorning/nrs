@@ -38,6 +38,10 @@ XMLWriter.prototype = {
 	writeDocType:function( dt ){
 		this.doctype = dt;
 	},
+	//set the stylesheet
+	writeStylesheet:function( type, href ){
+		this.stylesheet = {type: type, href: href};
+	},
 	//start a new node with this name, and an optional namespace
 	writeStartElement:function( name, ns ){
 		if( ns )//namespace
@@ -99,6 +103,9 @@ XMLWriter.prototype = {
 		if( this.doctype && this.root )
 			buffer.push('<!DOCTYPE '+ this.root.n + ' ' + this.doctype+'>'); 
 		
+		if( this.stylesheet && this.root )
+			buffer.push('<?xml-stylesheet type="' + this.stylesheet.type + '" href="' + this.stylesheet.href + '"?>');
+
 		if( formatting ){
 			while( num-- )
 				chr += this.indentChar;

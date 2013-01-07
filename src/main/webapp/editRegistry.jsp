@@ -39,8 +39,9 @@
     <!-- include javascript and css files for this app -->
     <link rel="stylesheet" type="text/css" href="<%=ctxPath%>/resources/nrs.css" media="screen"/>
     <script type="text/javascript" src="<%=ctxPath%>/js-lib/registryGrid.js"></script>
+    <script type="text/javascript" src="<%=ctxPath%>/js-lib/registryXmlUtils.js"></script>
     <script type="text/javascript" src="<%=ctxPath%>/js-lib/json2.js"></script>
-
+    <script type="text/javascript" src="<%=ctxPath%>/js-lib/XMLWriter-1.0.0.js"></script>
 </head>
 
 
@@ -57,54 +58,52 @@
         <span id="titleRegistryTitle"></span>
 </div>
 
-<%--<form>--%>
-    <div id="registryDetailsPanel">
-        <table class="registryDetails">
-            <%--<tr><td>URL fragment</td><td><input id="registryToken" name="registryToken" type="text" onchange="titleRegistryToken.innerHTML = this.value" value="<%=escapeHtml4(registryToken)%>"></td></tr>--%>
-            <tr><td>Title</td><td><input id="registryTitle" name="registryTitle" type="text" onchange="setTitle(this.value)"></td></tr>
-            <tr><td>Created</td><td><input id="registryCreated" name="registryCreated" type="text" onfocus="$(this).datepicker().datepicker('show');"></td></tr>
-            <tr><td>Last Updated</td><td><input id="registryLastUpdated" name="registryLastUpdated" type="text" onfocus="$(this).datepicker().datepicker('show');"></td></tr>
-            <tr>
-                <td>Parent Registry</td>
-                <td>
-                    <select id="registryParentRegistry" name="registryParentRegistry"></select>
-                </td>
-            </tr>
-            <tr>
-                <td>Management Policy</td>
-                <td>
-                    <select id="registryManagementPolicy" name="registryManagementPolicy"></select>
-                </td>
-            </tr>
-            <tr><td>Description</td><td><textarea id="registryDescription" name="registryDescription" rows="5" cols="50"></textarea></td></tr>
-            <tr><td>Notes</td><td><textarea id="registryNotes" name="registryNotes" rows="5" cols="50"></textarea></td></tr>
-            <tr id="fieldsEditor">
-                <td style="vertical-align: top;">Columns</td>
-                <td>
-                    <div id="registryFieldsGridShowHideDiv">
-                        <a id="registryFieldsGridEditA" href="javascript:editRegistryFields()" style="display: inline">[Edit]</a>
-                        <a id="registryFieldsGridApplyA" href="javascript:applyRegistryFields()"  style="display: none">[Apply]</a>
-                        <a id="registryFieldsGridCancelA" href="javascript:cancelRegistryFields()"  style="display: none">[Cancel]</a>
-                    </div>
-                    <div id="registryFieldsEditorDiv" style="display: none">
-                        <div id="registryFieldsGridDiv"></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="vertical-align: top;">Entries</td>
-                <td><div id="registryEntriesGridDiv"></div></td>
-            </tr>
-            <tr>
-                <td style="vertical-align: top;"></td>
-                <td><div id="save-revert-buttons">
-                    <input type="button" value="Save Changes" onclick="javascript:saveRegistry(); return false;">
-                    <input type="button" value="Revert Changes" onclick="javascript:initRegistry(); return false;">
-                </div></td>
-            </tr>
-        </table>
-    </div>
-<%--</form>--%>
+<div id="registryDetailsPanel">
+    <table class="registryDetails">
+        <%--<tr><td>URL fragment</td><td><input id="registryToken" name="registryToken" type="text" onchange="titleRegistryToken.innerHTML = this.value" value="<%=escapeHtml4(registryToken)%>"></td></tr>--%>
+        <tr><td>Title</td><td><input id="registryTitle" name="registryTitle" type="text" onchange="setTitle(this.value)"></td></tr>
+        <tr><td>Created</td><td><input id="registryCreated" name="registryCreated" type="text" onfocus="$(this).datepicker().datepicker('show');"></td></tr>
+        <tr><td>Last Updated</td><td><input id="registryLastUpdated" name="registryLastUpdated" type="text" onfocus="$(this).datepicker().datepicker('show');"></td></tr>
+        <tr>
+            <td>Parent Registry</td>
+            <td>
+                <select id="registryParentRegistry" name="registryParentRegistry"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>Management Policy</td>
+            <td>
+                <select id="registryManagementPolicy" name="registryManagementPolicy"></select>
+            </td>
+        </tr>
+        <tr><td>Description</td><td><textarea id="registryDescription" name="registryDescription" rows="5" cols="50"></textarea></td></tr>
+        <tr><td>Notes</td><td><textarea id="registryNotes" name="registryNotes" rows="5" cols="50"></textarea></td></tr>
+        <tr id="fieldsEditor">
+            <td style="vertical-align: top;">Columns</td>
+            <td>
+                <div id="registryFieldsGridShowHideDiv">
+                    <a id="registryFieldsGridEditA" href="javascript:editRegistryFields()" style="display: inline">[Edit]</a>
+                    <a id="registryFieldsGridApplyA" href="javascript:applyRegistryFields()"  style="display: none">[Apply]</a>
+                    <a id="registryFieldsGridCancelA" href="javascript:cancelRegistryFields()"  style="display: none">[Cancel]</a>
+                </div>
+                <div id="registryFieldsEditorDiv" style="display: none">
+                    <div id="registryFieldsGridDiv"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;">Entries</td>
+            <td><div id="registryEntriesGridDiv"></div></td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;"></td>
+            <td><div id="save-revert-buttons">
+                <input type="button" value="Save Changes" onclick="javascript:saveRegistry(); return false;">
+                <input type="button" value="Revert Changes" onclick="javascript:initRegistry(); return false;">
+            </div></td>
+        </tr>
+    </table>
+</div>
 
 
 <script type="text/javascript">
@@ -222,20 +221,18 @@
         document.addEventListener("keydown", function (e) {
             if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
                 e.preventDefault();
-                console.log("CTRL-S");
-                // Process event...
                 saveRegistry();
             }
         }, false);
     }
 
-    function saveRegistry() {
+    function _attic_saveRegistry() {
         var newReg = createRegistryFromScreen();
         var strNewReg = JSON.stringify(newReg, null, "  ");
 
-        xhrPost(ctxPath + '/data/registry/' + newReg.details.Token + ".json", strNewReg,
+        xhrPut(ctxPath + '/data/registry/' + newReg.details.Token + ".json", strNewReg,
                 function onSuccess(loaded_registry) {
-                    registry = loaded_registry;
+                    var registry = loaded_registry;
                     initScreenWithRegistry(registry);
                     console.log(["re-loaded registry after save", registry]);
                 },
@@ -376,11 +373,84 @@
         registryFieldsGrid.render();
     }
 
-    function scratch() {
-        xhrGet(ctxPath + '/data/registry/2/registry.json', function (data) {
-            console.log(["xhrGet(ctxPath + '/data/registry/2/registry.json')", data]);
-        });
+    function saveRegistry() {
+        var newReg = createRegistryFromScreen();
+        var registryJson = JSON.stringify(newReg, null, "  ");
+        var registryNrsXml = registryToNrsXml(newReg);
+        var registryNrsXsd = registryToNrsXsd(newReg);
+        var registryNrsXsl = registryToNrsXsl(newReg);
+
+        var files = {
+             filename0:  '/registry/' + newReg.details.Token + ".json"
+            ,body0:      registryJson
+            ,filename1:  '/registry/' + newReg.details.Token + ".xml"
+            ,body1:      registryNrsXml
+            ,filename2:  '/registry/' + newReg.details.Token + ".xsd"
+            ,body2:      registryNrsXsd
+            ,filename3:  '/registry/' + newReg.details.Token + ".xsl"
+            ,body3:      registryNrsXsl
+        };
+
+        console.log(["saveRegistry", files]);
+
+        xhrPost(ctxPath + '/data/multiplefiles',
+                files,
+                function onSuccess(loaded_registry) {
+                    var registry = loaded_registry;
+                    initScreenWithRegistry(registry);
+                    console.log(["re-loaded registry after save", registry]);
+                },
+                function onError (err) {
+                    console.log(["error while saving registry", err])
+                }
+        );
     }
+
+
+function xhrPost (url, params, onLoaded, onFailure) {
+    if (typeof onLoaded != "function") return false;
+
+    // we use a trick to avoid getting an old version from the browser's cache
+    var orig_url = url;
+    var sep = url.indexOf('?') >= 0 ? '&' : '?';
+    url += sep + Math.floor(Math.random() * 100000);
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            var jsonData;
+            if ((200 != this.status) || (!this.responseText)) {
+                if ("function" == typeof onFailure) onFailure(this);
+                return false;
+            }
+            if (typeof this.responseText == "string") jsonData = eval("(" + this.responseText + ")");
+            if ("function" == typeof onLoaded) onLoaded (jsonData);
+        }
+    };
+
+    var body = "";
+    for (var paramName in params) {
+        body += paramName + "=" + encodeURIComponent(params[paramName]) + "&";
+    }
+
+    console.log(["xhrPost", url, params, body]);
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(body);
+
+    return true;
+};
+
+if (!String.prototype.encodeXML) {
+  String.prototype.encodeXML = function () {
+    return this.replace(/&/g, '&amp;')
+               .replace(/</g, '&lt;')
+               .replace(/>/g, '&gt;')
+               .replace(/'/g, '&apos;')
+               .replace(/"/g, '&quot;');
+  };
+}
 
 </script>
 

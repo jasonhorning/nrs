@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="urn:nena:xml:namespace:nrs"
+        targetNamespace="urn:nena:xml:namespace:nrs"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        >
+
+    <!-- /registry -->
+    <xs:element name="registry" type="tns:registryType"/>
+
+    <xs:complexType name="registryType">
+        <xs:sequence>
+            <xs:element name="options" type="tns:optionsType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="details" type="tns:detailsType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="entries" type="tns:entriesType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- /registry/options -->
+    <xs:complexType name="optionsType">
+        <xs:sequence>
+            <xs:element name="isSystemRegistry" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- /registry/details -->
+    <xs:complexType name="detailsType">
+        <xs:sequence>
+            <xs:element name="token" type="xs:token"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="created" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="last-updated" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="parent-registry" type="xs:token" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="management-policy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="notes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- /registry/entries -->
+    <xs:complexType name="entriesType">
+        <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

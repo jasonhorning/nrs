@@ -1,0 +1,44 @@
+{
+  "details": {
+    "Token": "bd2",
+    "Title": "Brian",
+    "Created": "11/10/2012",
+    "Last Updated": "11/16/2012",
+    "Parent Registry": "elementState",
+    "Management Policy": "Private Use",
+    "Description": "Some guy.",
+    "Notes": "Mostly harmless."
+  },
+  "fields": [
+    {
+      "Name": "Value",
+      "Type": "token"
+    },
+    {
+      "Name": "Description",
+      "Type": "string"
+    },
+    {
+      "Name": "Reference",
+      "Type": "reference"
+    },
+    {
+      "Name": "Date",
+      "Type": "date"
+    }
+  ],
+  "entries": [
+    {
+      "Value": "Value1",
+      "Description": "Describe the meaning of Value 1 here.",
+      "Reference": "NENA 08-003 v1",
+      "Date": "06/02/1974"
+    },
+    {
+      "Value": "d",
+      "Description": "asd and & lt < gt > quot \" apos ' done",
+      "Reference": "NENA 71-002 draft",
+      "Date": "11/08/2012"
+    }
+  ]
+}

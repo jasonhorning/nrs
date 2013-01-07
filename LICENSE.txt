@@ -25,14 +25,21 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 The Software includes the following open-source and public domain projects:
 
-  EditableGrid 2.0.1
-  http://editablegrid.net/license
-  Dual licensed under the MIT or GPL Version 2 licenses
+    editablegrid-2.0.1.js
+    Copyright (c) 2011 Webismymind SPRL
+    Dual licensed under the MIT or GPL Version 2 licenses.
+    http://editablegrid.net/license
 
-  jQuery v1.6.4
-  http://jquery.org/license
-  Dual licensed under the MIT or GPL Version 2 licenses
+    jQuery v1.6.4
+    http://jquery.org/license
+    Dual licensed under the MIT or GPL Version 2 licenses
 
-  json2.js
-  http://www.JSON.org/js.html
-  Public domain
+    json2.js
+    2011-10-19
+    Public Domain.
+    NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+    See http://www.JSON.org/js.html
+
+    XMLWriter - XML generator for Javascript, based on .NET's XMLTextWriter.
+    Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+    Licensed under BSD (http://www.opensource.org/licenses/bsd-license.php)
