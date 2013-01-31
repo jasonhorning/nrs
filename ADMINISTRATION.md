@@ -54,7 +54,7 @@ Note: A future enhancement to the NRS application may require git+ssh access to 
 Installation Instructions
 -------------------------
 
-`
+
   # as root
   % useradd nrs
   % cd /
@@ -68,7 +68,7 @@ Installation Instructions
       tmpDir=/var/tmp
   % chkconfig --level 35 nrs-admin on
   % chkconfig --level 35 httpd on
-`
+
 
 Setting up the apache web server
 --------------------------------
@@ -79,19 +79,18 @@ Securing the admin tool
 
 #as root (instructions tbd)
 
-`
+
   % htpasswd ...
-`
+
 
 Starting and stopping the NRS administration application
 --------------------------------------------------------
 
-`
   #as root
   % service httpd start
   % service nrs-admin start
   % service nrs-admin stop
-`
+
 
 Backup/Restore
 --------------
