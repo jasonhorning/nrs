@@ -18,16 +18,16 @@ _Note: The instructions in this document are prescriptive, but in reality there 
 Package Contents
 ----------------
 
-* nrs.tar.gz
+* `nrs.tar.gz`  
   the NRS application distribution, which contains:
 
-  * /usr/local/bin/nrs/nrs-jetty-console.war
+  * `/usr/local/bin/nrs/nrs-jetty-console.war`  
     the NRS application (executable Jar, despite its .war name)
 
-  * /var/nrs/datastore/*
+  * `/var/nrs/datastore/*`  
     the NRS registry XML files
 
-  * /etc/httpd.d/nrs.*
+  * `/etc/httpd.d/nrs.*`  
     Apache web server configuration files for NRS
 
 
@@ -53,7 +53,6 @@ Note: A future enhancement to the NRS application may require git+ssh access to 
 
 Installation Instructions
 -------------------------
-
 
 	# as root
 	% useradd nrs
@@ -93,4 +92,4 @@ Starting and stopping the NRS administration application
 Backup/Restore
 --------------
 
-Filesystem backups and restores of the /var/nrs directory are all that are required to backup and restore the data that the NRS administration application maintains.  The files in this directory are very small, far less than 10MB in total size.
+Filesystem backups and restores of the `/var/nrs` directory are all that are required to backup and restore the data that the NRS administration application maintains.  The files in this directory are very small, far less than 10MB in total size.
