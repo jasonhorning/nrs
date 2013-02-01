@@ -69,15 +69,12 @@ Installation Instructions
 	% chkconfig --level 35 httpd on
 
 
-Setting up the apache web server
---------------------------------
+Maintaining NRS administrator users & passwords
+------------------------------------------
+_Note: the NRS application doesn't track users and passwords internally.  Rather, when the NRS application is installed with an Apache front-end web server, Apache user authentication is used to secure the NRS application._
 
-
-Securing the admin tool
------------------------
-
-	#as root (instructions tbd)
-	% htpasswd ...
+	#as root
+	% htpasswd ... (instructions tbd)
 
 
 Starting and stopping the NRS administration application
