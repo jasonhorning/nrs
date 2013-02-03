@@ -92,7 +92,7 @@
 
     <xsl:template match='*[local-name()="Reference"]'>
         <xsl:variable name="reference-id" select="text()"/>
-        <a href="{$nrs-references//ref:URL[../ref:Id/text() = $reference-id]}"><xsl:apply-templates/></a>
+        <a href="{$nrs-references//ref:URL[../ref:Id/text() = $reference-id]}" target="_blank"><xsl:apply-templates/></a>
     </xsl:template>
 
     <xsl:template name="nrs:registryempty">
@@ -118,10 +118,15 @@
             </div>
 
             <h2>National Emergency Number Association</h2>
-            <h1>NENA Registry System</h1>
+            <h1>
+                <xsl:choose>
+                    <xsl:when test="../nrs:token != '_registries'"><a href="_registries.xml">NENA Registry System</a></xsl:when>
+                    <xsl:otherwise>NENA Registry System</xsl:otherwise>
+                </xsl:choose>
+            </h1>
         </div>
 
-        <h1><xsl:apply-templates select="child::node()" /></h1>
+        <h1><xsl:value-of select="text()"/></h1>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:created">

@@ -107,6 +107,20 @@ a:hover {
     font-weight: 100;
 }
 
+.header h1 a {
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+    font-size: 48px;
+    color: #000000;
+    font-weight: 100;
+}
+
+.header h1 a:link {text-decoration:none;}
+.header h1 a:visited {text-decoration:none;}
+.header h1 a:hover {text-decoration:underline;}
+.header h1 a:active {text-decoration:underline;}
+
+
 .header h2 {
     margin: 50px 0px 15px 0px;
     padding: 0px;
