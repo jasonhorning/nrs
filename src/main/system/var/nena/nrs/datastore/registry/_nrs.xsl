@@ -126,6 +126,9 @@
         </div>
 
         <h1><xsl:value-of select="text()"/></h1>
+        <xsl:if test='not(//nrs:entries/*[namespace-uri()="urn:nena:xml:namespace:nrs._registries"])'>
+            <a href="{../nrs:token/text()}.xml?download">download xml</a> | <a href="{../nrs:token/text()}.xsd?download">download schema</a>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:created">
