@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:nena:xml:namespace:nrs._references" targetNamespace="urn:nena:xml:namespace:nrs._references" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:annotation>
+        <xs:documentation>This registry defines URL references for assignment to the Reference field of other registries.</xs:documentation>
+    </xs:annotation>
+    <xs:element name="entry" type="tns:entryType" />
+    <xs:complexType name="entryType">
+        <xs:sequence>
+            <xs:element name="Id" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="URL" type="xs:anyURI" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

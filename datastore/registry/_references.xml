@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="_references.xsl"?>
+<registry xmlns="urn:nena:xml:namespace:nrs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:nena:xml:namespace:nrs _nrs.xsd urn:nena:xml:namespace:nrs._references _references.xsd">
+    <options>
+        <isSystemRegistry>true</isSystemRegistry>
+    </options>
+    <details>
+        <token>_references</token>
+        <title>References</title>
+        <created>2012-07-16</created>
+        <last-updated>2012-07-16</last-updated>
+        <parent-registry></parent-registry>
+        <management-policy>Other</management-policy>
+        <description>This registry defines URL references for assignment to the Reference field of other registries.</description>
+        <notes>This is a NRS system registry and is not accessible by the public.</notes>
+    </details>
+    <entries>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>(None)</Id>
+            <URL></URL>
+            <Description>No reference document.</Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>NENA 08-003 v1</Id>
+            <URL>http://www.nena.org/?page=i3_Stage3</URL>
+            <Description>Detailed Functional and Interface Standards for the NENA i3 Solution</Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>NENA 70-001</Id>
+            <URL>http://www.nena.org/?page=nena_registry_system</URL>
+            <Description>NENA Registry System</Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>NENA 71-001 v1</Id>
+            <URL>http://www.nena.org/?page=NG911_AdditionalData</URL>
+            <Description>NG9-1-1 Additional Data </Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>NENA 71-002 draft</Id>
+            <URL>https://nena.webexone.com/r.asp?a=5&amp;id=118741</URL>
+            <Description>Civic Location Data Exchange Format (CLDXF)</Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>IETF RFC5031</Id>
+            <URL>http://www.ietf.org/rfc/rfc5031.txt</URL>
+            <Description>A Uniform Resource Name (URN) for Emergency and Other Well-Known Services</Description>
+        </entry>
+        <entry xmlns="urn:nena:xml:namespace:nrs._references">
+            <Id>IETF RFC6061</Id>
+            <URL>http://www.ietf.org/rfc/rfc6061.txt</URL>
+            <Description>Uniform Resource Name (URN) Namespace for the National Emergency Number Association (NENA)</Description>
+        </entry>
+    </entries>
+</registry>
