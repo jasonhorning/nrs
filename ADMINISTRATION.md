@@ -53,20 +53,36 @@ Note: A future enhancement to the NRS application may require git+ssh access to 
 
 Installation Instructions
 -------------------------
+_Note: execute the following as root._
 
-	# as root
+	% java -version
+	java version "1.7.0_04"
+	Java(TM) SE Runtime Environment (build 1.7.0_04-b20)
+	Java HotSpot(TM) 64-Bit Server VM (build 23.0-b21, mixed mode)
 	% useradd nrs
 	% cd /
-	% tar zxvf /path/to/nrs.tar.gz
-	% java -jar /usr/local/bin/nrs/nrs-jetty-console.war --createStartScript nrs-admin
-	% mv /usr/local/bin/nrs/nrs-admin /etc/rc3.d/
-	# edit /usr/local/bin/nrs/nrs-admin.cnf and modify the following settings
+	% tar zxovf ~bdupras/projects/nena/nrs/target/nena-nrs.tar.gz
+	% chown -R nrs.nrs /var/nena/nrs
+	% java -jar /opt/nena/nrs/bin/nrs-jetty-console.war --createStartScript nrs-admin
+	% vi /opt/nena/nrs/bin/nrs-admin.cnf
 		JAVA_USER=nrs
-		contextPath=/nrs
-		port=8080
-		tmpDir=/var/tmp
-	% chkconfig --level 35 nrs-admin on
-	% chkconfig --level 35 httpd on
+		JAVA_OPTS="-server -Xmx512m"
+		JAVA_ARGS="--headless --port 8080 --contextPath /nrs --tmpDir /var/tmp"
+	% vi /opt/nena/nrs/bin/nrs-admin
+		LOG="/var/nena/nrs/log/$NAME.out"
+	% ln -s /opt/nena/nrs/bin/nrs-admin /etc/init.d/
+	% chkconfig nrs-admin on
+	% chkconfig httpd on
+	% service httpd restart
+	Stopping httpd:                                            [  OK  ]
+	Starting httpd:                                            [  OK  ]
+	% service nrs-admin restart
+	Restarting nrs-admin.
+	% curl -i http://localhost:8080/nrs
+	HTTP/1.1 302 Found
+	Location: http://localhost:8080/nrs/
+	Content-Length: 0
+	Server: Jetty(7.6.0.v20120127)
 
 
 Maintaining NRS administrator users & passwords
