@@ -141,7 +141,7 @@
 
     <xsl:template match="nrs:registry/nrs:details/nrs:parent-registry">
         <xsl:choose>
-            <xsl:when test="./*">
+            <xsl:when test="./text()">
                 <h3>Parent Registry</h3><span class="registry-detail"><a href="{text()}.xml"><xsl:value-of select="text()"/></a></span>
             </xsl:when>
             <xsl:otherwise>
