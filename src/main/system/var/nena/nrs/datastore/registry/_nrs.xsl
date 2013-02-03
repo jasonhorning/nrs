@@ -109,6 +109,7 @@
     </xsl:template>
 
     <xsl:template match="/nrs:registry/nrs:details/nrs:title">
+        <!-- this header layout is derived from the NENA PSAP Registry by DDTI, Inc.  https://psaps.ddti.net/-->
         <div class="header">
             <div style="float:left;">
                 <a href="http://www.nena.org" target="_blank">

@@ -43,3 +43,10 @@ The Software includes the following open-source and public domain projects:
     XMLWriter - XML generator for Javascript, based on .NET's XMLTextWriter.
     Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
     Licensed under BSD (http://www.opensource.org/licenses/bsd-license.php)
+
+
+The Software also includes portions work derived from the following sources:
+
+    Digital Data Technologies, Inc., www.ddti.net
+      nrs-registry.css - derived from https://psaps.ddti.net/Content/Screen.css
+      _nrs.xsl - portions derived from https://psaps.ddti.net/
