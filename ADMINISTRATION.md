@@ -24,7 +24,7 @@ Package Contents
   * `/usr/local/bin/nrs/nrs-jetty-console.war`  
     the NRS application (executable Jar, despite its .war name)
 
-  * `/var/nrs/datastore/*`  
+  * `/var/nena/nrs/datastore/*`
     the NRS registry XML files
 
   * `/etc/httpd.d/nrs.*`  
@@ -89,4 +89,4 @@ Starting and stopping the NRS administration application
 Backup/Restore
 --------------
 
-Filesystem backups and restores of the `/var/nrs` directory are all that are required to backup and restore the data that the NRS administration application maintains.  The files in this directory are very small, far less than 10MB in total size.
+Filesystem backups and restores of the `/var/nena/nrs` directory are all that are required to backup and restore the data that the NRS administration application maintains.  The files in this directory are very small, far less than 10MB in total size.

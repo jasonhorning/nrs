@@ -27,14 +27,11 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
 
     private String getRoot() {
         final String DATASTORE_PATH = "NRS_DATASTORE_PATH";
-        final String USER_HOME = System.getProperty("user.home");
         final String VAR_NENA_NRS_DATASTORE = "/var/nena/nrs/datastore";
 
         String root = System.getProperty(DATASTORE_PATH);
         if (null == root) root = System.getenv().get(DATASTORE_PATH);
         if ((null == root) && new File(VAR_NENA_NRS_DATASTORE).exists()) root = VAR_NENA_NRS_DATASTORE;
-
-        if (null != root) root = root.replaceAll("~/", USER_HOME + "/");
 
         return root;
     }
