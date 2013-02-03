@@ -71,6 +71,7 @@ _Note: execute the following as root._
 	% vi /opt/nena/nrs/bin/nrs-admin
 		LOG="/var/nena/nrs/log/$NAME.out"
 	% ln -s /opt/nena/nrs/bin/nrs-admin /etc/init.d/
+	% ln -s /var/nena/nrs/datastore/registry/ /var/www/html/
 	% chkconfig nrs-admin on
 	% chkconfig httpd on
 	% service httpd restart
@@ -83,14 +84,24 @@ _Note: execute the following as root._
 	Location: http://localhost:8080/nrs/
 	Content-Length: 0
 	Server: Jetty(7.6.0.v20120127)
+	% curl -i http://localhost:8080/nrs
+	HTTP/1.1 302 Found
+	Location: http://localhost:8080/nrs/
+	Content-Length: 0
+	Server: Jetty(7.6.0.v20120127)
+
 
 
 Maintaining NRS administrator users & passwords
 ------------------------------------------
 _Note: the NRS application doesn't track users and passwords internally.  Rather, when the NRS application is installed with an Apache front-end web server, Apache user authentication is used to secure the NRS application._
 
-	#as root
-	% htpasswd ... (instructions tbd)
+_Note: execute the following as root (use the -c flag the first time to create a new nrs.passwd file.)_
+
+	% htdigest -c /etc/httpd/conf.d/nrs.passwd "NRS Administration" nrsadmin
+	Adding password for nrsadmin in realm NRS Administration.
+	New password:
+	Re-type new password:
 
 
 Starting and stopping the NRS administration application
