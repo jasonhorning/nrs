@@ -3,7 +3,11 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:nrs="urn:nena:xml:namespace:nrs"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:ref="urn:nena:xml:namespace:nrs._references"
+        version="1.0">
+
+    <xsl:param name="nrs-references" select="document('./_references.xml')/nrs:registry/nrs:entries/*" />
 
     <xsl:output method="xml"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
@@ -84,6 +88,11 @@
 
     <xsl:template match='*[namespace-uri()="urn:nena:xml:namespace:nrs._registries" and local-name()="Id"]'>
         <a href='{text()}.xml'><xsl:apply-templates/></a>
+    </xsl:template>
+
+    <xsl:template match='*[local-name()="Reference"]'>
+        <xsl:variable name="reference-id" select="text()"/>
+        <a href="{$nrs-references//ref:URL[../ref:Id/text() = $reference-id]}"><xsl:apply-templates/></a>
     </xsl:template>
 
     <xsl:template name="nrs:registryempty">
