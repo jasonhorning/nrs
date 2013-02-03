@@ -28,11 +28,11 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
     private String getRoot() {
         final String DATASTORE_PATH = "NRS_DATASTORE_PATH";
         final String USER_HOME = System.getProperty("user.home");
-        final String ETC_NENA_NRS_DATASTORE = "/etc/nena/nrs/datastore";
+        final String VAR_NENA_NRS_DATASTORE = "/var/nena/nrs/datastore";
 
         String root = System.getProperty(DATASTORE_PATH);
         if (null == root) root = System.getenv().get(DATASTORE_PATH);
-        if ((null == root) && new File(ETC_NENA_NRS_DATASTORE).exists()) root = ETC_NENA_NRS_DATASTORE;
+        if ((null == root) && new File(VAR_NENA_NRS_DATASTORE).exists()) root = VAR_NENA_NRS_DATASTORE;
 
         if (null != root) root = root.replaceAll("~/", USER_HOME + "/");
 
@@ -40,7 +40,7 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        File file = getFile(request);
+        File file = getFile(request.getPathInfo());
         if ((null == file) || (!file.exists())) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
@@ -48,25 +48,6 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
 
         int status = inFileOutResponse(file, response);
         response.setStatus(status);
-    }
-
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        File file = getFile(request);
-        File parent = (file == null) ? null : file.getParentFile();
-        if ((null == file) || (file.exists() && !file.canWrite()) || (null == parent) || (!parent.canWrite())) {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-
-        try {
-            if (inRequestOutFile(request, file)) {
-                int status = inFileOutResponse(file, response);
-                response.setStatus(status);
-            }
-        } catch (Throwable e) {
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            e.printStackTrace(System.err);
-        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -117,10 +98,6 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
         }
     }
 
-    private File getFile(HttpServletRequest request) {
-        return getFile(request.getPathInfo());
-    }
-
     private File getFile(String path_info) {
         String root = getRoot();
         String file_name = root + path_info;
@@ -147,32 +124,6 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
         }
         return tmp;
     }
-
-    private boolean inRequestOutFile(HttpServletRequest request, File file) throws Exception {
-        InputStream in = request.getInputStream();
-        File tmp = File.createTempFile(file.getName().substring(file.getName().lastIndexOf("/") + 1), null);
-        OutputStream out = new FileOutputStream(tmp);
-
-        byte[] buf = new byte[1024];
-        int count = 0;
-        try {
-            while ((count = in.read(buf)) >= 0) {
-                out.write(buf, 0, count);
-            }
-        } finally {
-            try {
-                in.close();
-            } catch (IOException ignore) {
-            }
-            try {
-                out.close();
-            } catch (IOException ignore) {
-            }
-        }
-
-        return tmp.renameTo(file);
-    }
-
 
     private int inFileOutResponse(File file, HttpServletResponse response) {
         String file_name = file.getName();

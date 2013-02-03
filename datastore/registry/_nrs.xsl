@@ -2,7 +2,6 @@
 <xsl:stylesheet
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:nrs="urn:nena:xml:namespace:nrs"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:ref="urn:nena:xml:namespace:nrs._references"
         version="1.0">
