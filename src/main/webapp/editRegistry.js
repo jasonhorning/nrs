@@ -9,7 +9,7 @@
     });
 
     registryFieldsGrid.setColumns([
-        {"Name":"Name", "Type":"token", "suggestions":['Value', 'Description', 'References', 'Date']},
+        {"Name":"Name", "Type":"token", "suggestions":['Value', 'Description', 'Reference', 'Date']},
         {"Name":"Type", "Type":"nrsRegistryType"}
     ]);
 
