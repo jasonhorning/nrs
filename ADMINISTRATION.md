@@ -56,9 +56,9 @@ Installation Instructions
 _Note: execute the following as root._
 
 	% java -version
-	java version "1.7.0_04"
-	Java(TM) SE Runtime Environment (build 1.7.0_04-b20)
-	Java HotSpot(TM) 64-Bit Server VM (build 23.0-b21, mixed mode)
+		java version "1.7.0_04"
+		Java(TM) SE Runtime Environment (build 1.7.0_04-b20)
+		Java HotSpot(TM) 64-Bit Server VM (build 23.0-b21, mixed mode)
 	% useradd nrs
 	% cd /
 	% tar zxovf ~bdupras/projects/nena/nrs/target/nena-nrs.tar.gz
@@ -75,21 +75,25 @@ _Note: execute the following as root._
 	% chkconfig nrs-admin on
 	% chkconfig httpd on
 	% service httpd restart
-	Stopping httpd:                                            [  OK  ]
-	Starting httpd:                                            [  OK  ]
+		Stopping httpd:                                            [  OK  ]
+		Starting httpd:                                            [  OK  ]
 	% service nrs-admin restart
-	Restarting nrs-admin.
-	% curl -i http://localhost:8080/nrs
-	HTTP/1.1 302 Found
-	Location: http://localhost:8080/nrs/
-	Content-Length: 0
-	Server: Jetty(7.6.0.v20120127)
-	% curl -i http://localhost:8080/nrs
-	HTTP/1.1 302 Found
-	Location: http://localhost:8080/nrs/
-	Content-Length: 0
-	Server: Jetty(7.6.0.v20120127)
-
+		Restarting nrs-admin.
+	% curl -I http://localhost:8080/nrs
+		HTTP/1.1 302 Found
+		Location: http://localhost:8080/nrs/
+		Content-Length: 0
+		Server: Jetty(7.6.0.v20120127)
+	% curl -I http://localhost/registry/_registries.xml
+		HTTP/1.1 200 OK
+		Date: Sun, 03 Feb 2013 07:15:02 GMT
+		Server: Apache/2.2.15 (CentOS)
+		Last-Modified: Sun, 03 Feb 2013 06:45:34 GMT
+		ETag: "2200b4-aad-4d4cc52cf2ea2"
+		Accept-Ranges: bytes
+		Content-Length: 2733
+		Connection: close
+		Content-Type: text/xml
 
 
 Maintaining NRS administrator users & passwords
