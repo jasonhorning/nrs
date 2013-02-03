@@ -17,30 +17,31 @@
 
     <xsl:template match="/nrs:registry">
         <head>
-            <link rel="stylesheet" href="nrs.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/nrs-registry.css" type="text/css"/>
             <title><xsl:value-of select="nrs:details/nrs:title" /></title>
         </head>
         <body>
             <xsl:apply-templates select="nrs:details/nrs:title" />
             <xsl:if
                     test="nrs:details/nrs:created|nrs:details/nrs:last-updated|nrs:details/nrs:parent-registry|nrs:details/nrs:management-policy|nrs:details/nrs:description|nrs:details/nrs:notes|nrs:entries">
-                <dl>
+
                     <xsl:apply-templates select="nrs:details/nrs:created" />
                     <xsl:apply-templates select="nrs:details/nrs:last-updated" />
                     <xsl:apply-templates select="nrs:details/nrs:parent-registry" />
                     <xsl:apply-templates select="nrs:details/nrs:management-policy" />
                     <xsl:apply-templates select="nrs:details/nrs:description" />
                     <xsl:apply-templates select="nrs:details/nrs:notes" />
-                </dl>
             </xsl:if>
 
             <xsl:apply-templates select="nrs:entries" />
+
+            <xsl:call-template name="nrs:registryfooter"/>
         </body>
     </xsl:template>
 
     <xsl:template match="/nrs:registry/nrs:entries">
         <h2 class="entries">Entries</h2>
-        <table class="sortable" id="table-{@id}">
+        <table class="gridstyle" id="table-{@id}">
             <thead>
                 <xsl:call-template name="nrs:entry_header"/>
             </thead>
@@ -60,7 +61,7 @@
     <xsl:template name="nrs:entry_header">
         <xsl:for-each select="$registry-columns">
             <xsl:if test='not(@name="Publish" and ancestor::*[@targetNamespace="urn:nena:xml:namespace:nrs._registries"])'>
-                <th><xsl:value-of select="@name"/></th>
+                <th class="registry-column-{@name}"><xsl:value-of select="@name"/></th>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
@@ -72,7 +73,7 @@
                 <xsl:for-each select="$registry-columns">
                     <xsl:variable name="elemName" select="@name"/>
                     <xsl:if test='not($elemName="Publish" and ancestor::*[@targetNamespace="urn:nena:xml:namespace:nrs._registries"])'>
-                        <td>
+                        <td class="registry-column-{@name}">
                             <xsl:apply-templates select="$entry/*[name() = $elemName]"/>
                         </td>
                     </xsl:if>
@@ -93,39 +94,56 @@
         </tr>
     </xsl:template>
 
+    <xsl:template name="nrs:registryfooter">
+        <div class="registry-footer">
+            ©2012-13 National Emergency Number Association, all rights reserved.
+        </div>
+    </xsl:template>
+
     <xsl:template match="/nrs:registry/nrs:details/nrs:title">
+        <div class="header">
+            <div style="float:left;">
+                <a href="http://www.nena.org" target="_blank">
+                    <img src="resources/nena-logo-small.png" alt="National Emergency Number Association"/>
+                </a>
+            </div>
+
+            <h2>National Emergency Number Association</h2>
+            <h1>NENA Registry System</h1>
+        </div>
+
         <h1><xsl:apply-templates select="child::node()" /></h1>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:created">
-        <dt>Created</dt><dd><tt><xsl:value-of select="." /></tt></dd>
+        <h3>Created</h3><span class="registry-detail"><xsl:value-of select="." /></span>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:last-updated">
-        <dt>Last Updated</dt><dd><tt><xsl:value-of select="." /></tt></dd>
+        <h3>Last Updated</h3><span class="registry-detail"><xsl:value-of select="." /></span>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:parent-registry">
         <xsl:choose>
             <xsl:when test="./*">
-                <dt>Parent Registry</dt><dd><tt><a href="{text()}.xml"><xsl:value-of select="text()"/></a></tt></dd>
+                <h3>Parent Registry</h3><span class="registry-detail"><a href="{text()}.xml"><xsl:value-of select="text()"/></a></span>
             </xsl:when>
             <xsl:otherwise>
-                <dt>Parent Registry</dt><dd><tt>None</tt></dd>
+                <h3>Parent Registry</h3><span class="registry-detail">None</span>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:management-policy">
-        <dt>Management Policy</dt><dd><tt><xsl:apply-templates/></tt></dd>
+        <h3>Management Policy</h3><span class="registry-detail"><xsl:apply-templates/></span>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:description">
-        <dt>Description</dt><dd><tt><xsl:apply-templates/></tt></dd>
+        <h3>Description</h3><span class="registry-detail"><xsl:apply-templates/></span>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:notes">
-        <dt>Note</dt><dd><tt><xsl:apply-templates/></tt></dd>
+        <h3>Note</h3><span class="registry-detail"><xsl:apply-templates/></span>
     </xsl:template>
 
 </xsl:stylesheet>

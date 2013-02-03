@@ -22,6 +22,7 @@ public class DatastoreServlet extends javax.servlet.http.HttpServlet {
         contentTypes.put("xml", "text/xml");
         contentTypes.put("xsd", "text/xml");
         contentTypes.put("xsl", "text/xml");
+        contentTypes.put("css", "text/css");
     }
 
     private String getRoot() {

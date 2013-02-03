@@ -1,0 +1,188 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+b {
+    font-weight: 600;
+}
+
+p {
+    margin: 5px 0px 20px 0px;
+    line-height: 20px;
+}
+
+ul {
+    margin: 0px 0px 20px 0px;
+}
+
+li {
+    margin: 0px 0px 0px 30px;
+}
+
+body {
+    width:1000px;
+    margin: 0px auto;
+    padding: 0px;
+    background: #cccccc;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Segoe UI", "Helvetica", Garuda, Arial, sans-serif;
+    line-height: 16px;
+}
+
+img {
+    border:none;
+}
+
+a {
+    margin: 0px;
+    padding: 0px;
+    color: #cc0000;
+    border: none;
+}
+
+a:link {
+    color: #cc0000;
+}
+
+a:visited {
+    color: #cc0000;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+.header {
+    height: 130px;
+    margin: 0px;
+    padding: 10px 0px;
+    line-height: 16px;
+}
+
+.header h1 {
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+    font-size: 48px;
+    color: #000000;
+    font-weight: 100;
+}
+
+.header h2 {
+    margin: 50px 0px 15px 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+
+
+h1 {
+    margin: 30px 0px 20px 0px;
+    padding: 0px;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 30px 0px 15px 0px;
+    padding: 0px;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+h3 {
+    margin: 10px 0px 5px 0px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.registry-detail {
+    margin: 0px 0px 0px 20px;
+}
+
+.registry-footer {
+    margin: 20px 0px 20px 0px;
+}
+
+.registry-column-Id {
+    white-space:nowrap;
+}
+
+.registry-column-Value {
+    white-space:nowrap;
+}
+
+.registry-column-Reference {
+    white-space:nowrap;
+}
+
+.registry-column-Date {
+    white-space:nowrap;
+}
+
+.gridstyle {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gridstyle td {
+    border-bottom: 1px solid #e8e8e8;
+    border-collapse: collapse;
+    color: #666666;
+    padding: 8px;
+}
+
+.gridstyle th {
+    border-bottom: 1px solid #D4E0EE;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+    font-weight: 100;
+    font-size: 16px;
+    background: #999999;
+    color: #ffffff;
+}
+
+.gridstyle tbody tr {
+    background: #f8f8f8;
+}
