@@ -133,34 +133,34 @@
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:created">
-        <h3>Created</h3><span class="registry-detail"><xsl:value-of select="." /></span>
+        <h3>Created</h3><p class="registry-detail"><xsl:value-of select="." /></p>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:last-updated">
-        <h3>Last Updated</h3><span class="registry-detail"><xsl:value-of select="." /></span>
+        <h3>Last Updated</h3><p class="registry-detail"><xsl:value-of select="." /></p>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:parent-registry">
         <xsl:choose>
             <xsl:when test="./text()">
-                <h3>Parent Registry</h3><span class="registry-detail"><a href="{text()}.xml"><xsl:value-of select="text()"/></a></span>
+                <h3>Parent Registry</h3><p class="registry-detail"><a href="{text()}.xml"><xsl:value-of select="text()"/></a></p>
             </xsl:when>
             <xsl:otherwise>
-                <h3>Parent Registry</h3><span class="registry-detail">None</span>
+                <h3>Parent Registry</h3><p class="registry-detail">None</p>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:management-policy">
-        <h3>Management Policy</h3><span class="registry-detail"><xsl:apply-templates/></span>
+        <h3>Management Policy</h3><p class="registry-detail"><xsl:apply-templates/></p>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:description">
-        <h3>Description</h3><span class="registry-detail"><xsl:apply-templates/></span>
+        <h3>Description</h3><p class="registry-detail"><xsl:apply-templates/></p>
     </xsl:template>
 
     <xsl:template match="nrs:registry/nrs:details/nrs:notes">
-        <h3>Note</h3><span class="registry-detail"><xsl:apply-templates/></span>
+        <h3>Note</h3><p class="registry-detail"><xsl:apply-templates/></p>
     </xsl:template>
 
 </xsl:stylesheet>
