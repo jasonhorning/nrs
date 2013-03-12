@@ -121,3 +121,38 @@ Backup/Restore
 --------------
 
 Filesystem backups and restores of the `/var/nena/nrs` directory are all that are required to backup and restore the data that the NRS administration application maintains.  The files in this directory are very small, far less than 10MB in total size.
+
+
+Application Design
+------------------
+<pre>
+                                  O Public HTTP Port, e.g.
+                                  | http://technet.nena.org
+                                  |
+   +------------------------------|---------------------------------------+
+   |                              |                         Linux Host OS |
+   |                              |                                       |
+   |    +-------------------------+------------------------------+        |
+   |    |                                      Apache Web Server |        |
+   |    |--------------------------------------------------------|        |
+   |    |                                                        |        |
+   |    |    /nrs/registry/*                /nrs/admin/*         |        |
+   |    | served via filesystem         served via mod_proxy     |        |
+   |    |   anonymous access         authenticaed via mod_digest |        |
+   |    +--------+-------------------------------+---------------+        |
+   |             |                               |                        |
+   |             |                               |                        |
+   |             |                               |                        |
+   |             |reads                          v                        |
+   |             |                               O Private HTTP port      |
+   |             v                               | http://localhost:8080  |
+   |    +----------------+               +-------+---------------+        |
+   |    |  NRS XML Files |               | NRS Admin Application |        |
+   |    |----------------|               |-----------------------|        |
+   |    |  plain files   | &lt; - - - - - - +   Java application    |        |
+   |    |    on disk     |  reads/writes |  embedded web server  |        |
+   |    +----------------+               +-----------------------+        |
+   +----------------------------------------------------------------------+
+
+</pre>
+
