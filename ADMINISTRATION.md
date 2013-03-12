@@ -38,9 +38,9 @@ System Requirements
 * Apache 2.2 or later
 * Oracle Java 7 JRE (java version "1.7.0_04" or later)
 * NRS application resource requirements
-  128MB RAM
-  10MB disk space for application
-  10MB disk space for registries
+  * 128MB RAM
+  * 10MB disk space for application
+  * 10MB disk space for registries
 
 
 Network Requirements
