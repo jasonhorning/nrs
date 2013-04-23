@@ -102,7 +102,7 @@ _Note: the NRS application doesn't track users and passwords internally.  Rather
 
 _Note: execute the following as root (use the -c flag the first time to create a new nrs.passwd file.)_
 
-	% htdigest -c /etc/httpd/conf.d/nrs.passwd "NRS Administration" nrsadmin
+	% htdigest /etc/httpd/conf.d/nrs.passwd "NRS Administration" nrsadmin
 	Adding password for nrsadmin in realm NRS Administration.
 	New password:
 	Re-type new password:
