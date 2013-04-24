@@ -56,6 +56,11 @@
 
 
     window.onload = function() {
+        // hack - the registryGrid needs an onloaded event.  Without it, there's a race condition loading the _references registry.  When the grid renders before the _references registry is fully loaded, the render fails.
+        setTimeout(this._delayed_onload,300);
+    }
+
+    window._delayed_onload = function() {
         document.title = "Edit Registry [" + registryToken + "]";
         initParentRegistrySelector();
         initManagementPolicySelector();
