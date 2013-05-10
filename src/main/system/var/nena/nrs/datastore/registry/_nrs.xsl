@@ -104,8 +104,10 @@
 
     <xsl:template name="nrs:registryfooter">
         <div class="registry-footer">
-            ©2012-13 National Emergency Number Association, all rights reserved.
-        </div>
+            <xsl:if test="/nrs:registry/nrs:details/nrs:token != '_registries'">
+                <p><a href="https://www.nena.org/?NRS_SubmitNewValue" target="_blank">Submit</a> an entry for consideration to the <span style="font-style: italic"><xsl:value-of select="/nrs:registry/nrs:details/nrs:title"/></span> registry.</p>
+            </xsl:if>
+            <p>©2012-13 National Emergency Number Association, all rights reserved.</p>        </div>
     </xsl:template>
 
     <xsl:template match="/nrs:registry/nrs:details/nrs:title">
