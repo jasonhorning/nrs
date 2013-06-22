@@ -103,11 +103,14 @@
     </xsl:template>
 
     <xsl:template name="nrs:registryfooter">
-        <div class="registry-footer">
+        <div class="registry-footer" >
             <xsl:if test="/nrs:registry/nrs:details/nrs:token != '_registries'">
                 <p><a href="https://www.nena.org/?NRS_SubmitNewValue" target="_blank">Submit</a> an entry for consideration to the <span style="font-style: italic"><xsl:value-of select="/nrs:registry/nrs:details/nrs:title"/></span> registry.</p>
             </xsl:if>
-            <p>©2012-13 National Emergency Number Association, all rights reserved.</p>        </div>
+            <p style="float: left;">©2012-13 National Emergency Number Association, all rights reserved.</p>
+            <p style="float: right;">Please report errors, omissions, or concerns to the <a href="mailto:nrs-admin@nena.org">NRS Administrator</a></p>
+            <div style="clear: both;"/>
+        </div>
     </xsl:template>
 
     <xsl:template match="/nrs:registry/nrs:details/nrs:title">
