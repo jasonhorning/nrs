@@ -66,7 +66,7 @@ _Note: execute the following as root._
 	% java -jar /opt/nena/nrs/bin/nrs-jetty-console.war --createStartScript nrs-admin
 	% vi /opt/nena/nrs/bin/nrs-admin.cnf
 		JAVA_USER=nrs
-		JAVA_OPTS="-server -Xmx512m"
+                JAVA_OPTS="-server -Xmx512m -Dorg.eclipse.jetty.server.Request.maxFormContentSize=1000000"
 		JAVA_ARGS="--headless --port 8080 --contextPath /nrs --tmpDir /var/tmp"
 	% vi /opt/nena/nrs/bin/nrs-admin
 		LOG="/var/nena/nrs/log/$NAME.out"

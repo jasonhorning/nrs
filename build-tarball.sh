@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/bin/bash -e
 # because mvn is too rigid.  Ergh.
 
 mvn clean package
 
 cp -R src/main/system target
+mkdir -p target/system/opt/nena/nrs/bin/
 cp target/nrs-jetty-console.war target/system/opt/nena/nrs/bin/
 cp target/nrs.war target/system/opt/nena/nrs/bin/
 
